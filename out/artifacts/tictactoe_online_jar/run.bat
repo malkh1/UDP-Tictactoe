@@ -1,0 +1,1 @@
+java -jar tictactoe_online.jar 192.168.2.20
