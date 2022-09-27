@@ -5,7 +5,12 @@ play tictactoe with your friends using this project i made
 uses udp protocol
 
 1 person hosts it on their ip by running the server application
-others connect to that players server by using the hosts ip
+
+the player hosting the server will then run the client program.
+
+another player will connect to the host using the hosts' ip by entering it into the batch file provided.
+
+the server application supports multiple games going at the same time
 
 #UPDATE: ONLY WORKS ON LAN. 
 
