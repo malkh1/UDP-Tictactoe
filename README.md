@@ -8,7 +8,8 @@ uses udp protocol
 
 the player hosting the server will then run the client program.
 
-another player will connect to the host using the hosts' ip by entering it into the batch file provided.
+another player will connect to the host using the hosts' ip by entering it into the batch file provided. the batch file is location in the 
+Online_Tictactoe/out/artifacts/tictactoe_online_jar folder. batch file must be run in the same location as the jar file.
 
 the server application supports multiple games going at the same time
 
