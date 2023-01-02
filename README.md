@@ -17,4 +17,5 @@ Online_Tictactoe/out/artifacts/tictactoe_online_jar folder. Batch file must be r
 The server application supports multiple games going at the same time.
 
 
-# known issues: currently, the game works only on LAN. Games played through the internet are not working.
+# known issues
+currently, the game works only on LAN. Games played through the internet are not working.
