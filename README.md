@@ -5,7 +5,7 @@ Play tictactoe with your friends on Online Tictactoe
 
 How it works:
 
-Uses udp protocol to connect players together.
+Uses UDP protocol to connect players together.
 
 1 person hosts it on their ip by running the server application,
 
