@@ -18,4 +18,4 @@ The server application supports multiple games going at the same time.
 
 
 # known issues
-currently, the game works only on LAN. Games played through the internet are not working.
+Currently, the game works only on LAN. Games played through the internet are not working.
