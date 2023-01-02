@@ -1,26 +1,20 @@
 # Online_Tictactoe
 
-play tictactoe with your friends using this project i made
+Play tictactoe with your friends on Online Tictactoe
 
-uses udp protocol
 
-1 person hosts it on their ip by running the server application
+How it works:
+
+Uses udp protocol to connect players together.
+
+1 person hosts it on their ip by running the server application,
 
 the player hosting the server will then run the client program.
 
-another player will connect to the host using the hosts' ip by entering it into the batch file provided. the batch file is location in the 
-Online_Tictactoe/out/artifacts/tictactoe_online_jar folder. batch file must be run in the same location as the jar file.
+Another player will connect to the host using the hosts' ip by entering it into the batch file provided. The batch file is location in the 
+Online_Tictactoe/out/artifacts/tictactoe_online_jar folder. Batch file must be run in the same location as the jar file.
 
-the server application supports multiple games going at the same time
+The server application supports multiple games going at the same time.
 
-#UPDATE: ONLY WORKS ON LAN. 
 
-#THERE'S A BUG WHERE THE CLIENT WHO'S CONNECTING TO HOST FROM OUTSIDE THE LAN NEVER RECEIVES PACKET FROM SERVER.
-
-#GAME WORKS FINE ON LAN THO. NO ISSUES SO ITS PROABABLY NOT THE CODE
-
-#SPENT A BIT OF TIME TROUBLESHOOTING, BUT ITS ANNOYING TO PIN POINT WHY CLIENT DOES NOT RECEIVE PACKET.
-
-#COULD BE A FIREWALL THING, MAYBE PORTFORWARDING IDK 
-
-#IF U HAVE ANY IDEAS THEN LET ME KNOW BECAUSE I REALLY WANT THIS TO WORK :(
+#known issues: currently, the game works only on LAN. Games played through the internet are not working.
