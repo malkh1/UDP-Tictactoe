@@ -1,4 +1,4 @@
-# Online_Tictactoe
+# UDP Tictactoe
 
 Play tictactoe with your friends on Online Tictactoe
 
