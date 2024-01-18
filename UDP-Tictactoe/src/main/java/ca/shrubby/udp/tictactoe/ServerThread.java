@@ -1,4 +1,4 @@
-package source;
+package ca.shrubby.udp.tictactoe;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 
-import static source.Server.NUM_PLAYERS;
+import static ca.shrubby.udp.tictactoe.Server.NUM_PLAYERS;
 
 public class ServerThread implements Runnable{
     private DatagramSocket socket;

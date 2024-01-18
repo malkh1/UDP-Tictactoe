@@ -1,4 +1,4 @@
-package source;
+package ca.shrubby.udp.tictactoe;
 
 import java.io.Serializable;
 
