@@ -2,7 +2,7 @@ package ca.shrubby.udp.tictactoe;
 
 import java.io.IOException;
 
-public class tttgc {
+public class TictactoeGameClient {
 
     public static void main(String[] args) {
         String ipAddress;
