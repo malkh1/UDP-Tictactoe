@@ -17,8 +17,8 @@ public class tttgc {
             
         } else {
             System.out.println("You need to enter an ip address to play the game!\n"
-                    + "Ex: \"java -jar tttgc.jar 76.69.113.172\" to connect to a foreign host!\n"
-                    + "Ex: \"java -jar tttgc.jar 192.168.2.20\" to connect to a local host!");
+                    + "Ex: \"java -jar tictactoe-client.jar 76.69.113.172\" to connect to a foreign host!\n"
+                    + "Ex: \"java -jar tictactoe-client.jar 192.168.2.20\" to connect to a local host!");
         }
 
     }
