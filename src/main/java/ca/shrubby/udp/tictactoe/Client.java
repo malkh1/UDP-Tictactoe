@@ -12,16 +12,15 @@ public class Client {
         socket.setSoTimeout(120000); // timeout after 2 mins of inactivity
         byte[] buffer = new byte[1024];
         InetAddress serverAddress;
-        if(args.length > 0){
+        if (args.length > 0) {
             serverAddress = InetAddress.getByName(args[0]);
-        }
-        else{
+        } else {
             serverAddress = InetAddress.getByName("localhost");
         }
         var serverPort = 4545;
         JFrame clientWindow = new JFrame("Tictactoe Client");
         JPanel bodyPanel = new JPanel();
-        JTextArea messageBox = new JTextArea(10,30);
+        JTextArea messageBox = new JTextArea(10, 30);
         JScrollPane scrollPane = new JScrollPane(messageBox);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         bodyPanel.add(scrollPane);
@@ -32,51 +31,62 @@ public class Client {
         //Handshake
         buffer[0] = 1;
         var packet = new DatagramPacket(buffer, buffer.length, serverAddress, serverPort);
-        messageBox.append("Connecting to server @" + serverAddress + ":" + serverPort + "...\n");
+        String message = "Connecting to server @" + serverAddress + ":" + serverPort + "...\n";
+        System.out.println(message);
+        messageBox.append(message);
         socket.send(packet);
         socket.receive(packet);
-        messageBox.append("Server is online. Waiting to see if player(you) goes first\n");
+        message = "Server is online. Waiting to see if player(you) goes first\n";
+        System.out.println(message);
+        messageBox.append(message);
 
         //determining if player goes first
         boolean firstTurn = buffer[0] == 0;
-        if(firstTurn){
-            messageBox.append("You have the first turn\n");
-        }
-        else {
-            messageBox.append("You are not going first\n");
+        if (firstTurn) {
+            message = "You have the first turn\n";
+            System.out.println(message);
+            messageBox.append(message);
+        } else {
+            message = "You are not going first\n";
+            System.out.println(message);
+            messageBox.append(message);
         }
         boolean WHOEVER_WENT_FIRST_IN_THE_BEGINNING_OF_THE_GAME_FFS = firstTurn;
-        messageBox.append("Waiting to receive new port number from server thread...\n");
-        //receiving new port from the ServerThread
+        message = "Waiting to receive new port number from server thread...\n";
+        System.out.println(message);
+        messageBox.append(message);        //receiving new port from the ServerThread
         socket.receive(packet);
         serverPort = packet.getPort();
         //interaction
         buffer = new byte[1024];
         TicTacToeController controller = null;
-        messageBox.append("Waiting for server to begin game...\n");
+        message = "Waiting for server to begin game...\n";
+        System.out.println(message);
+        messageBox.append(message);
         packet = new DatagramPacket(buffer, buffer.length);
         socket.receive(packet);
-        messageBox.append("Game started!\n");
+        message = "Game started!\n";
+        System.out.println(message);
+        messageBox.append(message);
         clientWindow.dispose();
-        while(true){
+        while (true) {
             var byteStream = new ByteArrayInputStream(buffer);
             var deserializeStream = new ObjectInputStream(byteStream);
             TicTacToe ticTacToe = (TicTacToe) deserializeStream.readObject();
 
-            if(firstRun){
+            if (firstRun) {
                 controller = new TicTacToeController(ticTacToe);
                 var view = new TicTacToeView(controller);
                 controller.setView(view);
                 firstRun = false;
             }
-            if(firstTurn){
+            if (firstTurn) {
                 controller.setTurn(WHOEVER_WENT_FIRST_IN_THE_BEGINNING_OF_THE_GAME_FFS);
-            }
-            else {
+            } else {
                 controller.setTurn(true);
             }
             controller.updateGame();
-            if(firstTurn){
+            if (firstTurn) {
                 controller.setModel(ticTacToe);
                 controller.updateGame();
                 controller.checkWin();
@@ -98,7 +108,7 @@ public class Client {
                 byteOutStream.close();
 
                 controller.checkWin();
-                if(TicTacToeController.gameOver){
+                if (TicTacToeController.gameOver) {
                     System.exit(0);
                 }
             }

@@ -6,8 +6,6 @@ import java.io.ObjectOutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-
-
 import static ca.shrubby.udp.tictactoe.Server.NUM_PLAYERS;
 
 public class ServerThread implements Runnable{
@@ -39,7 +37,7 @@ public class ServerThread implements Runnable{
             //sending clients the new port
             for (int i = 0; i < NUM_PLAYERS; i++){
                 socket.send(new DatagramPacket(new byte[]{1}, 1, clientAddress[i], clientPort[i]));
-                System.out.println("sending to " + clientAddress[i]);
+                System.out.println("sending to " + clientAddress[i] + ":" + clientPort[i]);
             }
 
 

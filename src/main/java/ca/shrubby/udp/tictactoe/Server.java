@@ -48,7 +48,7 @@ public class Server {
                 socket.receive(receivePacket);
                 clientAddress[i] = receivePacket.getAddress();
                 clientPort[i] = receivePacket.getPort();
-                messageBox.append("Client connected from "+ clientAddress[i] + "\n");
+                messageBox.append("Client connected from "+ clientAddress[i] + ":" + clientPort[i] + "\n");
                 buffer[0] = (byte) turnOrder[i];
                 var sendPacket = new DatagramPacket(buffer, buffer.length,
                         clientAddress[i], clientPort[i]);
